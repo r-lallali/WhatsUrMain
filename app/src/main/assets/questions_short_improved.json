@@ -1,0 +1,254 @@
+{
+  "mode": "SHORT",
+  "lane": null,
+  "questions": [
+    {
+      "id": "q_range",
+      "type": "TEXT",
+      "prompt": "Tu préfères jouer au corps-à-corps ou à distance ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {
+          "id": "melee",
+          "label": "Corps-à-corps",
+          "weights": {"isRanged": 0, "durability": 1}
+        },
+        {
+          "id": "ranged",
+          "label": "À distance",
+          "weights": {"isRanged": 1, "poke": 1}
+        }
+      ]
+    },
+    {
+      "id": "q_damage_type",
+      "type": "TEXT",
+      "prompt": "Quel type de dégâts préfères-tu infliger ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {
+          "id": "physical",
+          "label": "Dégâts physiques (AD)",
+          "weights": {"dmgAD": 1, "dps": 1}
+        },
+        {
+          "id": "magical",
+          "label": "Dégâts magiques (AP)",
+          "weights": {"dmgAP": 1, "burst": 1}
+        },
+        {
+          "id": "hybrid",
+          "label": "Un mélange des deux",
+          "weights": {"dmgHybrid": 1}
+        }
+      ]
+    },
+    {
+      "id": "q_playstyle",
+      "type": "TEXT",
+      "prompt": "Comment aimes-tu jouer en combat ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {
+          "id": "burst",
+          "label": "Éliminer rapidement les ennemis",
+          "weights": {"burst": 1, "mobility": 1}
+        },
+        {
+          "id": "sustained",
+          "label": "Dégâts constants et soutenus",
+          "weights": {"dps": 1, "durability": 1}
+        },
+        {
+          "id": "support_team",
+          "label": "Aider et protéger mon équipe",
+          "weights": {"peel": 1, "teamfight": 1}
+        }
+      ]
+    },
+    {
+      "id": "q_complexity",
+      "type": "TEXT",
+      "prompt": "Quel niveau de complexité recherches-tu ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {
+          "id": "simple",
+          "label": "Simple et efficace",
+          "weights": {"complexity": 0}
+        },
+        {
+          "id": "moderate",
+          "label": "Moyennement complexe",
+          "weights": {"complexity": 1}
+        },
+        {
+          "id": "complex",
+          "label": "Très technique et complexe",
+          "weights": {"complexity": 2}
+        }
+      ]
+    },
+    {
+      "id": "q_teamrole",
+      "type": "TEXT",
+      "prompt": "Quel rôle veux-tu jouer en équipe ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {
+          "id": "initiator",
+          "label": "Initier les combats",
+          "weights": {"engage": 1, "durability": 1}
+        },
+        {
+          "id": "damage_dealer",
+          "label": "Infliger un maximum de dégâts",
+          "weights": {"burst": 1, "dps": 1, "teamfight": 1}
+        },
+        {
+          "id": "protector",
+          "label": "Protéger mes alliés",
+          "weights": {"peel": 1, "durability": 1}
+        }
+      ]
+    },
+    {
+      "id": "q_mobility",
+      "type": "TEXT",
+      "prompt": "Quelle mobilité préfères-tu ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {
+          "id": "static",
+          "label": "Statique mais puissant",
+          "weights": {"mobility": 0, "durability": 1, "teamfight": 1}
+        },
+        {
+          "id": "mobile",
+          "label": "Mobile et agile",
+          "weights": {"mobility": 1, "splitpush": 1}
+        }
+      ]
+    },
+    {
+      "id": "q_resource_type",
+      "type": "TEXT",
+      "prompt": "Gestion des ressources :",
+      "answerMode": "SINGLE",
+      "options": [
+        {
+          "id": "mana_user",
+          "label": "Mana (gestion requise)",
+          "weights": {"resourceMana": 1, "poke": 1}
+        },
+        {
+          "id": "energy_user",
+          "label": "Énergie (spam possible)",
+          "weights": {"resourceEnergy": 1, "burst": 1}
+        },
+        {
+          "id": "no_resource",
+          "label": "Pas de contrainte",
+          "weights": {"resourceMana": 0, "resourceEnergy": 0, "dps": 1}
+        }
+      ]
+    },
+    {
+      "id": "q_cc_preference",
+      "type": "TEXT",
+      "prompt": "Contrôle d'ennemis :",
+      "answerMode": "SINGLE",
+      "options": [
+        {
+          "id": "lots_cc",
+          "label": "Beaucoup de contrôle",
+          "weights": {"hardCC": 1, "engage": 1}
+        },
+        {
+          "id": "some_cc",
+          "label": "Un peu de contrôle",
+          "weights": {"hardCC": 1}
+        },
+        {
+          "id": "no_cc_needed",
+          "label": "Pas besoin, je tue vite",
+          "weights": {"hardCC": 0, "burst": 1}
+        }
+      ]
+    },
+    {
+      "id": "q_game_impact_short",
+      "type": "TEXT",
+      "prompt": "Comment veux-tu impacter la partie ?",
+      "answerMode": "MULTI",
+      "options": [
+        {
+          "id": "carry_damage",
+          "label": "Porter par les dégâts",
+          "weights": {"dps": 1, "burst": 1}
+        },
+        {
+          "id": "support_team",
+          "label": "Aider l'équipe",
+          "weights": {"peel": 1, "hardCC": 1}
+        },
+        {
+          "id": "control_map",
+          "label": "Contrôler la carte",
+          "weights": {"mobility": 1, "splitpush": 1}
+        },
+        {
+          "id": "teamfight_god",
+          "label": "Dominer les teamfights",
+          "weights": {"teamfight": 1}
+        }
+      ]
+    },
+    {
+      "id": "q_combat_timing",
+      "type": "TEXT",
+      "prompt": "À quel moment préfères-tu briller ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {
+          "id": "early_game",
+          "label": "Début de partie (early game)",
+          "weights": {"burst": 1, "poke": 1}
+        },
+        {
+          "id": "mid_game",
+          "label": "Milieu de partie",
+          "weights": {"teamfight": 1, "engage": 1}
+        },
+        {
+          "id": "late_game",
+          "label": "Fin de partie (scaling)",
+          "weights": {"dps": 1, "teamfight": 1}
+        }
+      ]
+    },
+    {
+      "id": "q_risk_vs_reward",
+      "type": "TEXT",
+      "prompt": "Ton approche du risque :",
+      "answerMode": "SINGLE",
+      "options": [
+        {
+          "id": "high_risk",
+          "label": "Risque élevé, récompense élevée",
+          "weights": {"burst": 1, "mobility": 1}
+        },
+        {
+          "id": "calculated",
+          "label": "Risques calculés",
+          "weights": {"poke": 1, "durability": 1}
+        },
+        {
+          "id": "safe_play",
+          "label": "Jeu sécurisé",
+          "weights": {"durability": 1, "peel": 1}
+        }
+      ]
+    }
+  ]
+}

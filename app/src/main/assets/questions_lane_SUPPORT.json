@@ -1,0 +1,108 @@
+{
+  "mode": "LANE",
+  "lane": "SUPPORT",
+  "questions": [
+    {
+      "id": "q_support_style",
+      "type": "TEXT",
+      "prompt": "Quel style de support préfères-tu ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "tank_engage", "label": "Tank engageur", "weights": {"durability": 2, "engage": 2, "hardCC": 2}},
+        {"id": "enchanter", "label": "Enchanter/heal", "weights": {"peel": 2, "teamfight": 1, "hardCC": 1}},
+        {"id": "mage_support", "label": "Mage support", "weights": {"dmgAP": 2, "poke": 2, "burst": 1}},
+        {"id": "utility", "label": "Utilitaire", "weights": {"hardCC": 2, "peel": 1, "teamfight": 1}}
+      ]
+    },
+    {
+      "id": "q_support_laning",
+      "type": "TEXT",
+      "prompt": "En phase de lane :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "aggressive_lane", "label": "Pression agressive", "weights": {"poke": 2, "engage": 1}},
+        {"id": "protective", "label": "Protection de l'ADC", "weights": {"peel": 2, "durability": 1}},
+        {"id": "roaming", "label": "Roam pour aider", "weights": {"mobility": 2, "hardCC": 1}}
+      ]
+    },
+    {
+      "id": "q_support_teamfight_role",
+      "type": "TEXT",
+      "prompt": "Ton rôle en teamfight :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "engage_teamfight", "label": "Engager le combat", "weights": {"engage": 2, "durability": 1, "hardCC": 1}},
+        {"id": "peel_carries", "label": "Protéger les carries", "weights": {"peel": 2, "hardCC": 1}},
+        {"id": "damage_support", "label": "Dégâts d'appoint", "weights": {"dmgAP": 1, "burst": 1, "teamfight": 1}},
+        {"id": "control_zone", "label": "Contrôler la zone", "weights": {"hardCC": 2, "teamfight": 1}}
+      ]
+    },
+    {
+      "id": "q_support_range_type",
+      "type": "TEXT",
+      "prompt": "Portée préférée :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "melee_support", "label": "Corps-à-corps (tank)", "weights": {"isRanged": 0, "durability": 2, "engage": 1}},
+        {"id": "ranged_support", "label": "À distance", "weights": {"isRanged": 1, "poke": 1, "peel": 1}}
+      ]
+    },
+    {
+      "id": "q_support_durability",
+      "type": "TEXT",
+      "prompt": "Niveau de survie :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "very_tanky", "label": "Très résistant", "weights": {"durability": 2, "engage": 1}},
+        {"id": "moderately_tanky", "label": "Modérément résistant", "weights": {"durability": 1}},
+        {"id": "squishy_utility", "label": "Fragile mais utile", "weights": {"durability": 0, "hardCC": 1, "peel": 1}}
+      ]
+    },
+    {
+      "id": "q_support_cc_type",
+      "type": "TEXT",
+      "prompt": "Type de contrôle :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "hard_cc", "label": "Contrôle dur (stun/knock)", "weights": {"hardCC": 2, "engage": 1}},
+        {"id": "soft_cc", "label": "Contrôle doux (slow/heal)", "weights": {"peel": 2, "teamfight": 1}},
+        {"id": "damage_cc", "label": "Contrôle + dégâts", "weights": {"hardCC": 1, "dmgAP": 1, "burst": 1}}
+      ]
+    },
+    {
+      "id": "q_support_vision_style",
+      "type": "TEXT",
+      "prompt": "Style de vision :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "deep_warding", "label": "Vision agressive", "weights": {"mobility": 1, "engage": 1}},
+        {"id": "protective_warding", "label": "Vision défensive", "weights": {"peel": 1, "durability": 1}},
+        {"id": "roam_vision", "label": "Vision pour roam", "weights": {"mobility": 2, "teamfight": 1}}
+      ]
+    },
+    {
+      "id": "q_support_resource_pref",
+      "type": "TEXT",
+      "prompt": "Gestion des ressources :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "mana_management", "label": "Gestion mana fine", "weights": {"resourceMana": 1, "peel": 1}},
+        {"id": "low_resource", "label": "Peu de contraintes", "weights": {"resourceMana": 0, "durability": 1}},
+        {"id": "energy_spam", "label": "Énergie pour spam", "weights": {"resourceEnergy": 1, "poke": 1}}
+      ]
+    },
+    {
+      "id": "q_support_champion_style",
+      "type": "IMAGE",
+      "prompt": "Quel support représente ton style ?",
+      "answerMode": "SINGLE",
+      "imageUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_0.jpg",
+      "options": [
+        {"id": "thresh_style", "label": "Thresh - Playmaker", "weights": {"hardCC": 2, "engage": 1, "peel": 1}},
+        {"id": "soraka_style", "label": "Soraka - Heal bot", "weights": {"peel": 2, "teamfight": 1, "durability": 0}},
+        {"id": "leona_style", "label": "Leona - Tank engage", "weights": {"durability": 2, "engage": 2, "hardCC": 2}},
+        {"id": "brand_style", "label": "Brand - Damage carry", "weights": {"dmgAP": 2, "burst": 2, "teamfight": 1}}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "mode": "LANE",
+  "lane": "TOP",
+  "questions": [
+    {
+      "id": "q_top_style",
+      "type": "TEXT",
+      "prompt": "Quel style de toplaner préfères-tu ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "tank", "label": "Tank pour l'équipe", "weights": {"durability": 2, "engage": 2, "teamfight": 1}},
+        {"id": "carry", "label": "Carry qui scale", "weights": {"dps": 2, "splitpush": 1}},
+        {"id": "bruiser", "label": "Bruiser équilibré", "weights": {"durability": 1, "dps": 1, "engage": 1}}
+      ]
+    },
+    {
+      "id": "q_top_matchups",
+      "type": "TEXT",
+      "prompt": "Comment gères-tu les matchups difficiles ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "safe_farm", "label": "Farm défensif", "weights": {"durability": 1, "poke": 1}},
+        {"id": "trade_heavy", "label": "Trades agressifs", "weights": {"burst": 1, "durability": 1}},
+        {"id": "outscale", "label": "Scale pour plus tard", "weights": {"dps": 2, "teamfight": 1}}
+      ]
+    },
+    {
+      "id": "q_top_teleport",
+      "type": "TEXT",
+      "prompt": "Comment utilises-tu Téléportation ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "teamfights", "label": "Pour les teamfights", "weights": {"teamfight": 2, "engage": 1}},
+        {"id": "side_pressure", "label": "Pression latérale", "weights": {"splitpush": 2, "mobility": 1}},
+        {"id": "back_to_lane", "label": "Retour en lane", "weights": {"durability": 1}}
+      ]
+    },
+    {
+      "id": "q_top_1v1",
+      "type": "TEXT",
+      "prompt": "En duel 1v1, tu préfères :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "burst_trade", "label": "Trades rapides", "weights": {"burst": 2, "mobility": 1}},
+        {"id": "sustained_fight", "label": "Combats longs", "weights": {"dps": 2, "durability": 1}},
+        {"id": "cc_setup", "label": "Contrôle puis dégâts", "weights": {"hardCC": 2, "burst": 1}}
+      ]
+    },
+    {
+      "id": "q_top_late_game",
+      "type": "TEXT",
+      "prompt": "En late game, ton rôle est :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "frontline", "label": "Frontline tank", "weights": {"durability": 2, "engage": 1, "peel": 1}},
+        {"id": "threat", "label": "Menace de splitpush", "weights": {"splitpush": 2, "dps": 1}},
+        {"id": "teamfight_carry", "label": "Carry teamfight", "weights": {"teamfight": 2, "dps": 1}}
+      ]
+    },
+    {
+      "id": "q_top_range_pref",
+      "type": "TEXT",
+      "prompt": "Portée d'attaque préférée :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "melee_only", "label": "Corps-à-corps uniquement", "weights": {"isRanged": 0, "durability": 1}},
+        {"id": "ranged_top", "label": "Ranged top (Jayce, Gnar...)", "weights": {"isRanged": 1, "poke": 2}}
+      ]
+    },
+    {
+      "id": "q_top_jungle_help",
+      "type": "TEXT",
+      "prompt": "Coopération avec le jungler :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "setup_ganks", "label": "Je setup les ganks", "weights": {"hardCC": 2, "engage": 1}},
+        {"id": "follow_up", "label": "Je follow-up", "weights": {"burst": 1, "mobility": 1}},
+        {"id": "solo_lane", "label": "Je préfère jouer solo", "weights": {"splitpush": 1, "durability": 1}}
+      ]
+    },
+    {
+      "id": "q_top_resource",
+      "type": "TEXT",
+      "prompt": "Gestion des ressources :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "mana_manage", "label": "Gestion mana fine", "weights": {"resourceMana": 1, "poke": 1}},
+        {"id": "energy_spam", "label": "Énergie pour spam", "weights": {"resourceEnergy": 1, "burst": 1}},
+        {"id": "resourceless", "label": "Pas de contrainte", "weights": {"resourceMana": 0, "resourceEnergy": 0, "dps": 1}}
+      ]
+    },
+    {
+      "id": "q_top_champion_inspiration",
+      "type": "IMAGE",
+      "prompt": "Quel toplaner t'inspire le plus ?",
+      "answerMode": "SINGLE",
+      "imageUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Darius_0.jpg",
+      "options": [
+        {"id": "darius_style", "label": "Darius - Bruiser AD", "weights": {"dmgAD": 2, "durability": 1, "engage": 1}},
+        {"id": "malphite_style", "label": "Malphite - Tank CC", "weights": {"durability": 2, "hardCC": 2, "teamfight": 1}},
+        {"id": "fiora_style", "label": "Fiora - Duelliste", "weights": {"dps": 2, "splitpush": 2, "complexity": 1}},
+        {"id": "kennen_style", "label": "Kennen - AP Ranged", "weights": {"isRanged": 2, "dmgAP": 2, "teamfight": 1}}
+      ]
+    }
+  ]
+}

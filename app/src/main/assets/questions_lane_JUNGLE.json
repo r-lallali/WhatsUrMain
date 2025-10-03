@@ -1,0 +1,163 @@
+{
+  "mode": "LANE",
+  "lane": "JUNGLE",
+  "questions": [
+    {
+      "id": "q_jungle_style",
+      "type": "TEXT",
+      "prompt": "Quel style de jungler préfères-tu ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "ganker", "label": "Gankeur permanent", "weights": {"mobility": 2, "hardCC": 1, "engage": 1}},
+        {"id": "farmer", "label": "Farmer puis carry", "weights": {"dps": 2, "teamfight": 1}},
+        {"id": "tank_engage", "label": "Tank engageur", "weights": {"durability": 2, "engage": 2, "hardCC": 1}}
+      ]
+    },
+    {
+      "id": "q_jungle_playstyle_multi",
+      "type": "TEXT",
+      "prompt": "Quels aspects t'attirent le plus en jungle ? (Plusieurs choix possibles)",
+      "answerMode": "MULTI",
+      "options": [
+        {"id": "map_control", "label": "Contrôle de la carte", "weights": {"mobility": 1, "peel": 1}},
+        {"id": "snowball_lanes", "label": "Faire snowball les lanes", "weights": {"burst": 1, "engage": 1}},
+        {"id": "late_game_carry", "label": "Porter l'équipe late", "weights": {"dps": 1, "teamfight": 1}},
+        {"id": "objective_control", "label": "Maîtrise des objectifs", "weights": {"durability": 1, "teamfight": 1}},
+        {"id": "enemy_disruption", "label": "Perturber l'ennemi", "weights": {"mobility": 1, "hardCC": 1}}
+      ]
+    },
+    {
+      "id": "q_jungle_clear",
+      "type": "TEXT",
+      "prompt": "Comment préfères-tu clear la jungle ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "fast_clear", "label": "Clear rapide AoE", "weights": {"dmgAP": 1, "teamfight": 1}},
+        {"id": "healthy_clear", "label": "Clear safe", "weights": {"durability": 1, "dps": 1}},
+        {"id": "single_target", "label": "Dégâts ciblés", "weights": {"dmgAD": 1, "burst": 1}}
+      ]
+    },
+    {
+      "id": "q_jungle_ganks",
+      "type": "TEXT",
+      "prompt": "Tes ganks sont basés sur :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "cc_setup", "label": "Contrôle d'abord", "weights": {"hardCC": 2, "engage": 1}},
+        {"id": "burst_damage", "label": "Dégâts burst", "weights": {"burst": 2, "mobility": 1}},
+        {"id": "sustained_damage", "label": "Dégâts soutenus", "weights": {"dps": 2, "durability": 1}}
+      ]
+    },
+    {
+      "id": "q_jungle_objectives",
+      "type": "TEXT",
+      "prompt": "Contrôle des objectifs :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "solo_objectives", "label": "Je peux les faire solo", "weights": {"dps": 2, "durability": 1}},
+        {"id": "team_objectives", "label": "Avec l'équipe", "weights": {"engage": 1, "teamfight": 2}},
+        {"id": "steal_objectives", "label": "Vol d'objectifs", "weights": {"mobility": 2, "burst": 1}}
+      ]
+    },
+    {
+      "id": "q_jungle_invade",
+      "type": "TEXT",
+      "prompt": "Face aux invasions :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "fight_back", "label": "Je contre-attaque", "weights": {"burst": 1, "hardCC": 1}},
+        {"id": "avoid_trade", "label": "J'évite et farm", "weights": {"mobility": 1, "dps": 1}},
+        {"id": "team_help", "label": "J'appelle l'équipe", "weights": {"teamfight": 1, "peel": 1}}
+      ]
+    },
+    {
+      "id": "q_jungle_scaling",
+      "type": "TEXT",
+      "prompt": "Courbe de puissance :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "early_game", "label": "Forte early game", "weights": {"burst": 2, "mobility": 1}},
+        {"id": "mid_game", "label": "Pic mid game", "weights": {"engage": 1, "teamfight": 1}},
+        {"id": "late_game", "label": "Scale late game", "weights": {"dps": 2, "teamfight": 1}}
+      ]
+    },
+    {
+      "id": "q_jungle_range",
+      "type": "TEXT",
+      "prompt": "Portée préférée :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "melee_jungle", "label": "Corps-à-corps", "weights": {"isRanged": 0, "durability": 1}},
+        {"id": "ranged_jungle", "label": "À distance", "weights": {"isRanged": 2, "poke": 1}}
+      ]
+    },
+    {
+      "id": "q_jungle_teamfight_role",
+      "type": "TEXT",
+      "prompt": "En teamfight tu :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "engage_tf", "label": "Engages en premier", "weights": {"engage": 2, "durability": 1}},
+        {"id": "peel_carries", "label": "Protèges les carries", "weights": {"peel": 2, "hardCC": 1}},
+        {"id": "assassinate", "label": "Assassines les carries", "weights": {"burst": 2, "mobility": 1}}
+      ]
+    },
+    {
+      "id": "q_jungle_resource",
+      "type": "TEXT",
+      "prompt": "Gestion des ressources :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "mana_dependent", "label": "Je gère ma mana", "weights": {"resourceMana": 1}},
+        {"id": "manaless", "label": "Pas de mana = liberté", "weights": {"resourceEnergy": 1, "mobility": 1}},
+        {"id": "energy_based", "label": "Energy pour spam", "weights": {"resourceEnergy": 1, "burst": 1}}
+      ]
+    },
+    {
+      "id": "q_jungle_complexity",
+      "type": "TEXT",
+      "prompt": "Niveau de complexité souhaité :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "simple_jungle", "label": "Simple et efficace", "weights": {"complexity": 0}},
+        {"id": "moderate_jungle", "label": "Quelques mécaniques", "weights": {"complexity": 1}},
+        {"id": "complex_jungle", "label": "Mécaniques avancées", "weights": {"complexity": 2}}
+      ]
+    },
+    {
+      "id": "q_jungle_vision",
+      "type": "TEXT",
+      "prompt": "Contrôle de vision :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "ward_heavy", "label": "Vision partout", "weights": {"peel": 1, "teamfight": 1}},
+        {"id": "vision_denial", "label": "Déni de vision", "weights": {"mobility": 1, "engage": 1}},
+        {"id": "basic_vision", "label": "Vision basique", "weights": {"dps": 1}}
+      ]
+    },
+    {
+      "id": "q_jungle_counterjungle",
+      "type": "TEXT",
+      "prompt": "Counter-jungle :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "aggressive_counter", "label": "Invasion agressive", "weights": {"mobility": 2, "burst": 1}},
+        {"id": "safe_counter", "label": "Vol opportuniste", "weights": {"mobility": 1, "poke": 1}},
+        {"id": "defensive_jungle", "label": "Protection de ma jungle", "weights": {"durability": 1, "hardCC": 1}}
+      ]
+    },
+    {
+      "id": "q_jungle_champion_style",
+      "type": "IMAGE",
+      "prompt": "Quel style de jungler t'inspire le plus ?",
+      "answerMode": "SINGLE",
+      "imageUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Graves_0.jpg",
+      "options": [
+        {"id": "graves_style", "label": "Graves - Carry physique", "weights": {"dmgAD": 2, "dps": 2, "isRanged": 1}},
+        {"id": "hecarim_style", "label": "Hecarim - Engage mobile", "weights": {"engage": 2, "mobility": 2, "durability": 1}},
+        {"id": "kindred_style", "label": "Kindred - Scaling ranged", "weights": {"isRanged": 1, "dps": 2, "teamfight": 1}},
+        {"id": "sejuani_style", "label": "Sejuani - Tank CC", "weights": {"durability": 2, "hardCC": 2, "engage": 1}}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "mode": "LONG",
+  "lane": null,
+  "questions": [
+    {
+      "id": "q_range_detailed",
+      "type": "TEXT",
+      "prompt": "Quelle est ta préférence de portée d'attaque ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "melee_only", "label": "Exclusivement corps-à-corps", "weights": {"isRanged": 0, "durability": 1, "engage": 1}},
+        {"id": "ranged_only", "label": "Exclusivement à distance", "weights": {"isRanged": 1, "poke": 2}},
+        {"id": "flexible_range", "label": "Les deux me vont", "weights": {"isRanged": 1, "dmgHybrid": 1}}
+      ]
+    },
+    {
+      "id": "q_damage_preference",
+      "type": "TEXT",
+      "prompt": "Quel type de dégâts préfères-tu infliger ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "pure_ad", "label": "Dégâts physiques purs (AD)", "weights": {"dmgAD": 2, "dps": 1, "splitpush": 1}},
+        {"id": "pure_ap", "label": "Dégâts magiques purs (AP)", "weights": {"dmgAP": 2, "burst": 1, "teamfight": 1}},
+        {"id": "hybrid_damage", "label": "Mélange AD/AP", "weights": {"dmgHybrid": 2, "complexity": 1}},
+        {"id": "true_damage", "label": "Dégâts vrais/% HP", "weights": {"dmgAD": 1, "dmgAP": 1, "complexity": 1}}
+      ]
+    },
+    {
+      "id": "q_combat_style_detailed",
+      "type": "TEXT",
+      "prompt": "Comment aimes-tu aborder les combats ?",
+      "answerMode": "MULTI",
+      "options": [
+        {"id": "assassinate", "label": "Assassiner les cibles fragiles", "weights": {"burst": 2, "mobility": 1}},
+        {"id": "sustained_fight", "label": "Combats longs et soutenus", "weights": {"dps": 2, "durability": 1}},
+        {"id": "poke_harass", "label": "Harceler avant l'engage", "weights": {"poke": 2, "isRanged": 1}},
+        {"id": "engage_fight", "label": "Initier les combats", "weights": {"engage": 2, "hardCC": 1}},
+        {"id": "control_zone", "label": "Contrôler une zone", "weights": {"hardCC": 2, "teamfight": 1}}
+      ]
+    },
+    {
+      "id": "q_complexity_detailed",
+      "type": "TEXT",
+      "prompt": "Quel niveau de complexité technique recherches-tu ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "very_simple", "label": "Très simple (débutant)", "weights": {"complexity": 0, "durability": 1}},
+        {"id": "simple_effective", "label": "Simple mais efficace", "weights": {"complexity": 0, "teamfight": 1}},
+        {"id": "moderate_skill", "label": "Complexité modérée", "weights": {"complexity": 1}},
+        {"id": "high_skill", "label": "Très technique", "weights": {"complexity": 2, "mobility": 1}},
+        {"id": "maximum_skill", "label": "Extrêmement complexe", "weights": {"complexity": 2, "burst": 1}}
+      ]
+    },
+    {
+      "id": "q_survivability_detailed",
+      "type": "TEXT",
+      "prompt": "Quelle importance donnes-tu à la survie ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "glass_cannon", "label": "Peu importe, je veux de la puissance", "weights": {"durability": 0, "burst": 2}},
+        {"id": "some_defense", "label": "Un peu de défense", "weights": {"durability": 1, "dps": 1}},
+        {"id": "balanced_hp", "label": "Équilibré", "weights": {"durability": 1, "teamfight": 1}},
+        {"id": "very_tanky", "label": "Très résistant", "weights": {"durability": 2, "engage": 1}},
+        {"id": "unkillable", "label": "Pratiquement invincible", "weights": {"durability": 2, "peel": 1, "hardCC": 1}}
+      ]
+    },
+    {
+      "id": "q_cc_control_detailed",
+      "type": "TEXT",
+      "prompt": "Quelle est ton approche du contrôle d'ennemis ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "no_cc_needed", "label": "Pas besoin, je les tue vite", "weights": {"hardCC": 0, "burst": 2}},
+        {"id": "soft_cc", "label": "Contrôles légers (ralentissements)", "weights": {"hardCC": 1, "poke": 1}},
+        {"id": "hard_cc", "label": "Contrôles durs (stuns/roots)", "weights": {"hardCC": 2, "engage": 1}},
+        {"id": "cc_chain", "label": "Enchaînements de CC", "weights": {"hardCC": 2, "complexity": 1, "teamfight": 1}}
+      ]
+    },
+    {
+      "id": "q_mobility_detailed",
+      "type": "TEXT",
+      "prompt": "Quelle mobilité veux-tu avoir ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "immobile", "label": "Statique, j'aime rester en place", "weights": {"mobility": 0, "durability": 1, "teamfight": 1}},
+        {"id": "some_mobility", "label": "Un dash ou deux", "weights": {"mobility": 1}},
+        {"id": "high_mobility", "label": "Très mobile", "weights": {"mobility": 2, "splitpush": 1}},
+        {"id": "hyper_mobile", "label": "Extrêmement mobile", "weights": {"mobility": 2, "burst": 1, "complexity": 1}}
+      ]
+    },
+    {
+      "id": "q_teamfight_position",
+      "type": "TEXT",
+      "prompt": "Où te positionnes-tu en teamfight ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "frontline_tank", "label": "Première ligne (tank)", "weights": {"durability": 2, "engage": 2, "hardCC": 1}},
+        {"id": "frontline_bruiser", "label": "Première ligne (bruiser)", "weights": {"durability": 1, "dps": 1, "engage": 1}},
+        {"id": "midline_fighter", "label": "Ligne moyenne", "weights": {"dps": 1, "teamfight": 1}},
+        {"id": "backline_safe", "label": "Arrière sécurisé", "weights": {"isRanged": 1, "teamfight": 2}},
+        {"id": "flanking", "label": "Flanc pour assassiner", "weights": {"mobility": 2, "burst": 2}}
+      ]
+    },
+    {
+      "id": "q_laning_strategy",
+      "type": "TEXT",
+      "prompt": "Quelle est ta stratégie en phase de lane ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "passive_farm", "label": "Farm passivement et scale", "weights": {"dps": 2, "teamfight": 1}},
+        {"id": "aggressive_trade", "label": "Trades agressifs constants", "weights": {"burst": 1, "poke": 1, "hardCC": 1}},
+        {"id": "all_in_kills", "label": "All-in pour des kills", "weights": {"burst": 2, "hardCC": 1}},
+        {"id": "roam_help", "label": "Roam pour aider l'équipe", "weights": {"mobility": 2, "teamfight": 1}},
+        {"id": "zone_control", "label": "Contrôler ma zone", "weights": {"hardCC": 1, "poke": 1, "durability": 1}}
+      ]
+    },
+    {
+      "id": "q_resource_management",
+      "type": "TEXT",
+      "prompt": "Comment veux-tu gérer tes ressources ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "mana_careful", "label": "Gestion mana prudente", "weights": {"resourceMana": 1, "poke": 1}},
+        {"id": "mana_spam", "label": "Mana pour spam", "weights": {"resourceMana": 1, "burst": 1, "teamfight": 1}},
+        {"id": "energy_burst", "label": "Énergie pour burst", "weights": {"resourceEnergy": 1, "burst": 2}},
+        {"id": "no_resource", "label": "Pas de contrainte de ressource", "weights": {"resourceMana": 0, "resourceEnergy": 0, "dps": 1}},
+        {"id": "special_resource", "label": "Ressource unique/spéciale", "weights": {"complexity": 1, "burst": 1}}
+      ]
+    },
+    {
+      "id": "q_scaling_curve",
+      "type": "TEXT",
+      "prompt": "À quel moment veux-tu être le plus fort ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "early_game", "label": "Début de partie (early)", "weights": {"burst": 2, "poke": 1, "mobility": 1}},
+        {"id": "mid_game", "label": "Milieu de partie (mid)", "weights": {"engage": 1, "teamfight": 1, "hardCC": 1}},
+        {"id": "late_game", "label": "Fin de partie (late)", "weights": {"dps": 2, "teamfight": 2}},
+        {"id": "all_game", "label": "Constant toute la partie", "weights": {"durability": 1, "teamfight": 1}}
+      ]
+    },
+    {
+      "id": "q_preferred_targets",
+      "type": "TEXT",
+      "prompt": "Quelles cibles préfères-tu attaquer en priorité ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "squishy_carries", "label": "Carries fragiles (ADC/Mage)", "weights": {"burst": 2, "mobility": 1}},
+        {"id": "frontline_tanks", "label": "Tanks et frontline", "weights": {"dps": 2, "durability": 1}},
+        {"id": "closest_enemy", "label": "L'ennemi le plus proche", "weights": {"teamfight": 1, "dps": 1}},
+        {"id": "multiple_enemies", "label": "Plusieurs ennemis à la fois", "weights": {"teamfight": 2, "dmgAP": 1}},
+        {"id": "priority_targets", "label": "Cibles stratégiques", "weights": {"burst": 1, "mobility": 1, "complexity": 1}}
+      ]
+    },
+    {
+      "id": "q_team_coordination",
+      "type": "TEXT",
+      "prompt": "Comment coordonnes-tu avec ton équipe ?",
+      "answerMode": "MULTI",
+      "options": [
+        {"id": "shot_calling", "label": "Je dirige les combats", "weights": {"engage": 2, "teamfight": 1}},
+        {"id": "follow_up", "label": "Je follow-up les engages", "weights": {"burst": 1, "hardCC": 1}},
+        {"id": "protect_carries", "label": "Je protège les carries", "weights": {"peel": 2, "hardCC": 1}},
+        {"id": "split_pressure", "label": "Je crée de la pression ailleurs", "weights": {"splitpush": 2, "mobility": 1}},
+        {"id": "vision_control", "label": "Je gère la vision", "weights": {"mobility": 1, "teamfight": 1}}
+      ]
+    },
+    {
+      "id": "q_mistake_tolerance",
+      "type": "TEXT",
+      "prompt": "Quelle tolérance aux erreurs veux-tu ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "high_risk", "label": "Haut risque, haut rendement", "weights": {"burst": 2, "complexity": 1}},
+        {"id": "calculated_risk", "label": "Risques calculés", "weights": {"mobility": 1, "burst": 1}},
+        {"id": "safe_play", "label": "Jeu sécurisé", "weights": {"durability": 1, "poke": 1}},
+        {"id": "very_forgiving", "label": "Très tolérant aux erreurs", "weights": {"durability": 2, "complexity": 0}}
+      ]
+    },
+    {
+      "id": "q_game_impact",
+      "type": "TEXT",
+      "prompt": "Comment veux-tu impacter la partie ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "carry_team", "label": "Porter l'équipe sur mes épaules", "weights": {"dps": 2, "teamfight": 2}},
+        {"id": "enable_team", "label": "Permettre à l'équipe de briller", "weights": {"peel": 2, "hardCC": 1}},
+        {"id": "control_map", "label": "Contrôler la carte", "weights": {"mobility": 2, "splitpush": 1}},
+        {"id": "shotcall_engage", "label": "Décider des combats", "weights": {"engage": 2, "durability": 1}}
+      ]
+    },
+    {
+      "id": "q_champion_identity",
+      "type": "TEXT",
+      "prompt": "Quelle identité de champion t'attire ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "one_shot", "label": "Le one-shot master", "weights": {"burst": 2, "complexity": 1}},
+        {"id": "dps_machine", "label": "La machine à DPS", "weights": {"dps": 2, "teamfight": 1}},
+        {"id": "unkillable_wall", "label": "Le mur infranchissable", "weights": {"durability": 2, "engage": 1, "hardCC": 1}},
+        {"id": "utility_god", "label": "Le dieu de l'utilité", "weights": {"peel": 2, "hardCC": 2}},
+        {"id": "split_push_demon", "label": "Le démon du splitpush", "weights": {"splitpush": 2, "mobility": 1, "dps": 1}}
+      ]
+    }
+  ]
+}

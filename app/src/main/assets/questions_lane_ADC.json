@@ -1,0 +1,107 @@
+{
+  "mode": "LANE",
+  "lane": "ADC",
+  "questions": [
+    {
+      "id": "q_adc_style",
+      "type": "TEXT",
+      "prompt": "Quel style d'ADC préfères-tu ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "hypercarry", "label": "Hypercarry late game", "weights": {"dps": 2, "teamfight": 2, "isRanged": 1}},
+        {"id": "early_game", "label": "Forte early game", "weights": {"burst": 1, "poke": 2, "isRanged": 1}},
+        {"id": "utility", "label": "Utility ADC", "weights": {"hardCC": 1, "teamfight": 1, "isRanged": 1}}
+      ]
+    },
+    {
+      "id": "q_adc_damage_type",
+      "type": "TEXT",
+      "prompt": "Type de dégâts préféré :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "pure_ad", "label": "Dégâts AD purs", "weights": {"dmgAD": 2, "dps": 2}},
+        {"id": "ap_carry", "label": "AP Carry", "weights": {"dmgAP": 2, "burst": 1}},
+        {"id": "mixed_adc", "label": "Dégâts mixtes", "weights": {"dmgHybrid": 2}}
+      ]
+    },
+    {
+      "id": "q_adc_positioning",
+      "type": "TEXT",
+      "prompt": "En teamfight, ton positionnement :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "safe_backline", "label": "Très safe backline", "weights": {"durability": 0, "teamfight": 2, "dps": 1}},
+        {"id": "aggressive_pos", "label": "Agressif pour plus de DPS", "weights": {"durability": 1, "dps": 2}},
+        {"id": "mobile_kiting", "label": "Mobile et kite", "weights": {"mobility": 2, "dps": 1}}
+      ]
+    },
+    {
+      "id": "q_adc_laning_phase",
+      "type": "TEXT",
+      "prompt": "En phase de lane :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "farm_safe", "label": "Farm safe et scale", "weights": {"poke": 1, "dps": 2}},
+        {"id": "aggressive_trades", "label": "Trades agressifs", "weights": {"burst": 1, "poke": 2}},
+        {"id": "all_in", "label": "All-in avec support", "weights": {"burst": 2, "hardCC": 1}}
+      ]
+    },
+    {
+      "id": "q_adc_mobility_need",
+      "type": "TEXT",
+      "prompt": "Besoin de mobilité :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "high_mobility", "label": "Très mobile", "weights": {"mobility": 2, "durability": 0}},
+        {"id": "some_mobility", "label": "Un peu mobile", "weights": {"mobility": 1}},
+        {"id": "static_damage", "label": "Statique mais puissant", "weights": {"mobility": 0, "dps": 2}}
+      ]
+    },
+    {
+      "id": "q_adc_peel_dependency",
+      "type": "TEXT",
+      "prompt": "Dépendance au peel :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "self_sufficient", "label": "Autonome", "weights": {"mobility": 1, "durability": 1}},
+        {"id": "need_some_peel", "label": "Un peu de peel", "weights": {"dps": 1, "teamfight": 1}},
+        {"id": "need_lots_peel", "label": "Beaucoup de peel", "weights": {"dps": 2, "durability": 0}}
+      ]
+    },
+    {
+      "id": "q_adc_range_preference",
+      "type": "TEXT",
+      "prompt": "Portée d'attaque :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "long_range", "label": "Très longue portée", "weights": {"poke": 2, "teamfight": 1}},
+        {"id": "medium_range", "label": "Portée moyenne", "weights": {"dps": 1, "mobility": 1}},
+        {"id": "short_range_burst", "label": "Courte mais burst", "weights": {"burst": 2, "mobility": 1}}
+      ]
+    },
+    {
+      "id": "q_adc_power_spike",
+      "type": "TEXT",
+      "prompt": "Pic de puissance :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "early_spike", "label": "1-2 items", "weights": {"burst": 2, "poke": 1}},
+        {"id": "mid_spike", "label": "2-3 items", "weights": {"dps": 1, "teamfight": 1}},
+        {"id": "late_spike", "label": "3+ items", "weights": {"dps": 2, "teamfight": 2}}
+      ]
+    },
+    {
+      "id": "q_adc_champion_style",
+      "type": "IMAGE",
+      "prompt": "Quel ADC correspond à ton style ?",
+      "answerMode": "SINGLE",
+      "imageUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg",
+      "options": [
+        {"id": "jinx_style", "label": "Jinx - Hypercarry", "weights": {"dps": 2, "teamfight": 2, "isRanged": 1}},
+        {"id": "draven_style", "label": "Draven - Early game", "weights": {"dmgAD": 2, "burst": 1, "complexity": 1}},
+        {"id": "ezreal_style", "label": "Ezreal - Safe mobile", "weights": {"mobility": 2, "poke": 2, "isRanged": 1}},
+        {"id": "vayne_style", "label": "Vayne - Duelliste", "weights": {"dps": 2, "mobility": 1, "complexity": 1}}
+      ]
+    }
+  ]
+}

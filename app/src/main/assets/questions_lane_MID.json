@@ -1,0 +1,108 @@
+{
+  "mode": "LANE",
+  "lane": "MID",
+  "questions": [
+    {
+      "id": "q_mid_style",
+      "type": "TEXT",
+      "prompt": "Quel style de midlaner préfères-tu ?",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "burst_mage", "label": "Mage burst", "weights": {"dmgAP": 2, "burst": 2, "teamfight": 1}},
+        {"id": "assassin", "label": "Assassin mobile", "weights": {"burst": 2, "mobility": 2, "dmgAD": 1}},
+        {"id": "control_mage", "label": "Mage de contrôle", "weights": {"dmgAP": 1, "hardCC": 2, "teamfight": 2}},
+        {"id": "roamer", "label": "Roamer supportif", "weights": {"mobility": 2, "hardCC": 1, "teamfight": 1}}
+      ]
+    },
+    {
+      "id": "q_mid_laning",
+      "type": "TEXT",
+      "prompt": "En phase de lane :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "farm_scale", "label": "Farm et scale", "weights": {"poke": 1, "teamfight": 2}},
+        {"id": "pressure_lane", "label": "Pression constante", "weights": {"burst": 1, "poke": 2}},
+        {"id": "roam_help", "label": "Roam pour aider", "weights": {"mobility": 2, "hardCC": 1}}
+      ]
+    },
+    {
+      "id": "q_mid_range_type",
+      "type": "TEXT",
+      "prompt": "Type de dégâts préféré :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "magic_damage", "label": "Dégâts magiques", "weights": {"dmgAP": 2, "isRanged": 1}},
+        {"id": "physical_damage", "label": "Dégâts physiques", "weights": {"dmgAD": 2, "mobility": 1}},
+        {"id": "mixed_damage", "label": "Dégâts mixtes", "weights": {"dmgHybrid": 2}}
+      ]
+    },
+    {
+      "id": "q_mid_teamfight_pos",
+      "type": "TEXT",
+      "prompt": "Position en teamfight :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "backline_safe", "label": "Backline sécurisée", "weights": {"isRanged": 1, "teamfight": 2}},
+        {"id": "flanking", "label": "Flanc pour assassiner", "weights": {"mobility": 2, "burst": 2}},
+        {"id": "frontline_control", "label": "Contrôle frontline", "weights": {"hardCC": 2, "durability": 1}}
+      ]
+    },
+    {
+      "id": "q_mid_priority",
+      "type": "TEXT",
+      "prompt": "Ta priorité principale :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "kill_pressure", "label": "Pression de kill", "weights": {"burst": 2, "mobility": 1}},
+        {"id": "wave_control", "label": "Contrôle des waves", "weights": {"poke": 1, "teamfight": 1}},
+        {"id": "map_control", "label": "Contrôle de map", "weights": {"mobility": 1, "hardCC": 1}}
+      ]
+    },
+    {
+      "id": "q_mid_complexity_pref",
+      "type": "TEXT",
+      "prompt": "Complexité souhaitée :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "simple_effective", "label": "Simple et efficace", "weights": {"complexity": 0, "teamfight": 1}},
+        {"id": "moderate_skill", "label": "Skill modéré", "weights": {"complexity": 1}},
+        {"id": "high_skill", "label": "Très technique", "weights": {"complexity": 2, "mobility": 1}}
+      ]
+    },
+    {
+      "id": "q_mid_resource_management",
+      "type": "TEXT",
+      "prompt": "Gestion des ressources :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "mana_careful", "label": "Gestion mana prudente", "weights": {"resourceMana": 1, "poke": 1}},
+        {"id": "energy_aggressive", "label": "Énergie agressive", "weights": {"resourceEnergy": 1, "burst": 1}},
+        {"id": "no_resource_spam", "label": "Spam sans limite", "weights": {"resourceMana": 0, "resourceEnergy": 0, "dps": 1}}
+      ]
+    },
+    {
+      "id": "q_mid_enemy_focus",
+      "type": "TEXT",
+      "prompt": "Cibles prioritaires :",
+      "answerMode": "SINGLE",
+      "options": [
+        {"id": "enemy_carry", "label": "Carry ennemi", "weights": {"burst": 2, "mobility": 1}},
+        {"id": "enemy_frontline", "label": "Frontline ennemie", "weights": {"dps": 2, "durability": 1}},
+        {"id": "area_damage", "label": "Dégâts de zone", "weights": {"teamfight": 2, "dmgAP": 1}}
+      ]
+    },
+    {
+      "id": "q_mid_champion_style",
+      "type": "IMAGE",
+      "prompt": "Quel style de midlaner t'attire ?",
+      "answerMode": "SINGLE",
+      "imageUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg",
+      "options": [
+        {"id": "yasuo_style", "label": "Yasuo - Assassin skillé", "weights": {"dmgAD": 2, "mobility": 2, "complexity": 2}},
+        {"id": "azir_style", "label": "Azir - Contrôle AP", "weights": {"dmgAP": 2, "hardCC": 1, "teamfight": 2}},
+        {"id": "zed_style", "label": "Zed - Burst assassin", "weights": {"burst": 2, "mobility": 2, "dmgAD": 1}},
+        {"id": "orianna_style", "label": "Orianna - Mage teamfight", "weights": {"dmgAP": 2, "teamfight": 2, "hardCC": 1}}
+      ]
+    }
+  ]
+}
